@@ -104,26 +104,20 @@ img,
 }
 
 .menu .link {
-  color: #404bbf;
+  color: #2e2f42;
   padding: 24px 0;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: block;
   position: relative;
-  transition-property: color, background-color;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu .link:hover,
-.menu .link:focus {
-  color: #404bbf;
-  padding-bottom: 0;
+.menu .active {
+  position: relative;
 }
 
-.menu .link:active::after,
-.menu .link:hover::after,
-.menu .link:focus::after {
+.menu .active::after {
   width: 100%;
   position: absolute;
   left: 0;
@@ -133,6 +127,12 @@ img,
   height: 4px;
   background-color: #404bbf;
   content: "";
+}
+
+.menu .link:hover,
+.menu .link:focus,
+.menu .link:active {
+  color: #404bbf;
 }
 
 .contacts {
