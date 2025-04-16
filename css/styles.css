@@ -104,7 +104,7 @@ img,
 }
 
 .menu .link {
-  color: #2e2f42;
+  color: #404bbf;
   padding: 24px 0;
   display: block;
   transition-property: color;
@@ -114,7 +114,6 @@ img,
 
 .menu .active {
   position: relative;
-  color: #404bbf;
 }
 
 .menu .active::after {
