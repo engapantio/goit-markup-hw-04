@@ -114,6 +114,7 @@ img,
 
 .menu .active {
   position: relative;
+  color: #404bbf;
 }
 
 .menu .active::after {
