@@ -60,6 +60,8 @@ img,
   line-height: 1.5;
   letter-spacing: 0.02em;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .top-line .container {
@@ -102,11 +104,12 @@ img,
 }
 
 .menu .link {
-  color: #2e2f42;
+  color: #404bbf;
   padding: 24px 0;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  position: relative;
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,7 +122,14 @@ img,
 }
 
 menu .link::after {
-  background-color: none;
+  background-color: #404bbf;
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  border-radius: 2px;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -163,10 +173,12 @@ menu .link::after {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/people-office\ 1.jpg);
+    url(../images/people-office1.jpg);
   padding: 188px 0;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  max-width: 1440px;
 }
 
 .headline {
@@ -182,7 +194,7 @@ menu .link::after {
 }
 
 .btn {
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   border: none;
   display: block;
   color: #fff;
@@ -198,9 +210,8 @@ menu .link::after {
   height: 56px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   margin: 48px auto 0;
-  transition-property: background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover {
@@ -246,9 +257,14 @@ menu .link::after {
 }
 
 .icon-ground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
   background-color: #f4f4fd;
   padding-top: 24px;
   padding-bottom: 24px;
+  margin-bottom: 8px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
 }
@@ -258,7 +274,6 @@ menu .link::after {
 }
 
 .value {
-  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -312,34 +327,39 @@ menu .link::after {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
-.staff-socials,
-.studio-socials {
+.staff-socials {
   display: flex;
   gap: 24px;
+  justify-content: center;
 }
 
-.staff-socials-ground {
+.staff-socials-ground,
+.studio-socials-ground {
   width: 40px;
   height: 40px;
+}
+
+.icon-link {
+  width: 100%;
+  height: 100%;
   background-color: #4d5ae5;
   border-radius: 50%;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.staff-socials-ground:hover,
-.staff-socials-ground:focus {
+.icon-link:hover,
+.icon-link:focus {
   background-color: #404bbf;
 }
 
 .staff-socials-ground .icon,
 .studio-socials-ground .icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  fill: #f4f4fd;
 }
 
 .portfolio-list {
@@ -367,7 +387,7 @@ menu .link::after {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 40px 32px 0 32px;
+  padding: 40px 32px;
   background-color: #4d5ae5;
   line-height: 1.5;
   font-size: 16px;
@@ -384,7 +404,8 @@ menu .link::after {
 }
 
 .portfolio-card:hover {
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .project-card {
@@ -404,7 +425,12 @@ menu .link::after {
 
 .page-ending .container {
   display: flex;
+  align-items: baseline;
   gap: 120px;
+}
+
+.page-ending-left {
+  margin-right: 120px;
 }
 
 .page-ending .link {
@@ -443,21 +469,11 @@ menu .link::after {
 }
 
 .studio-socials {
+  display: flex;
   gap: 16px;
 }
 
-.studio-socials-ground {
-  width: 40px;
-  height: 40px;
-  background-color: #4d5ae5;
-  border-radius: 50%;
-  position: relative;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.studio-socials-ground:hover,
-.studio-socials-ground:focus {
+.studio-socials-ground .icon-link:hover,
+.studio-socials-ground .icon-link:focus {
   background-color: #31d0aa;
 }
